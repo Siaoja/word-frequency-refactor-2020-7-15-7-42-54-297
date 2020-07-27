@@ -43,18 +43,4 @@ public class WordFrequencyGame {
         return sentenceToWordCountResult.toString();
     }
 
-    private Map<String, List<WordCountInfo>> getListMap(List<WordCountInfo> inputList) {
-        Map<String, List<WordCountInfo>> map = new HashMap<>();
-        for (WordCountInfo input : inputList) {
-
-            if (!map.containsKey(input.getWord())) {
-                List<WordCountInfo> arr = new ArrayList<>();
-                arr.add(input);
-                map.put(input.getWord(), arr);
-            } else {
-                map.get(input.getWord()).add(input);
-            }
-        }
-        return map;
-    }
 }
