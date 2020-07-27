@@ -1,17 +1,17 @@
 public class WordCountInfo {
-    private String value;
-    private int count;
+    private String word;
+    private int wordFequency;
 
     public WordCountInfo(String word, int wordFequency) {
-        this.value = word;
-        this.count = wordFequency;
+        this.word = word;
+        this.wordFequency = wordFequency;
     }
 
-    public String getValue() {
-        return this.value;
+    public String getWord() {
+        return this.word;
     }
 
     public int getWordCount() {
-        return this.count;
+        return this.wordFequency;
     }
 }
