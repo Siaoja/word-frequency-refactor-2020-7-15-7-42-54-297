@@ -20,26 +20,26 @@ public class WordFrequencyGame {
 
                 String[] words = sentence.split(SPACE_PATTERN);
 
-                List<WordCountInfo> inputList = new ArrayList<>();
+                List<WordCountInfo> wordCountInfos = new ArrayList<>();
                 for (String s : words) {
                     WordCountInfo input = new WordCountInfo(s, COUNT_INITIAL_VALUE);
-                    inputList.add(input);
+                    wordCountInfos.add(input);
                 }
 
-                Map<String, List<WordCountInfo>> map = getListMap(inputList);
+                Map<String, List<WordCountInfo>> map = getListMap(wordCountInfos);
 
                 List<WordCountInfo> list = new ArrayList<>();
                 for (Map.Entry<String, List<WordCountInfo>> entry : map.entrySet()) {
                     WordCountInfo input = new WordCountInfo(entry.getKey(), entry.getValue().size());
                     list.add(input);
                 }
-                inputList = list;
+                wordCountInfos = list;
 
-                inputList.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
+                wordCountInfos.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
 
                 ENTER_STRING = "\n";
                 StringJoiner joiner = new StringJoiner(ENTER_STRING);
-                for (WordCountInfo w : inputList) {
+                for (WordCountInfo w : wordCountInfos) {
                     String s = w.getWord() + SPACE_STRING + w.getWordCount();
                     joiner.add(s);
                 }
