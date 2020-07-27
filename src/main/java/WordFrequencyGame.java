@@ -13,6 +13,7 @@ public class WordFrequencyGame {
     public static final String SPACE_STRING = " ";
     public static final int COUNT_INITIAL_VALUE = 1;
     public static final String COUNT_INITIAL_STRING = " 1";
+    public static final String CALCULATE_ERROR = "Calculate Error";
     private String ENTER_STRING;
 
     public String getResult(String inputStr) {
@@ -53,7 +54,7 @@ public class WordFrequencyGame {
                 }
                 return joiner.toString();
             } catch (Exception e) {
-                return "Calculate Error";
+                return CALCULATE_ERROR;
             }
         }
     }
