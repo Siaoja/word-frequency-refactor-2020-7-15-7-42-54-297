@@ -12,21 +12,21 @@ public class WordFrequencyGame {
     public String getResult(String sentence) {
 
 
-        if (sentence.split(SPACE_PATTERN).length == COUNT_INITIAL_VALUE) {
-            return sentence + COUNT_INITIAL_STRING;
-        } else {
+//        if (sentence.split(SPACE_PATTERN).length == COUNT_INITIAL_VALUE) {
+//            return sentence + COUNT_INITIAL_STRING;
+//        } else {
 
-            try {
+        try {
 
-                List<WordCountInfo> wordCountInfos = countWordFrequency(sentence);
+            List<WordCountInfo> wordCountInfos = countWordFrequency(sentence);
 
-                wordCountInfos.sort((firstWordCountInfo, secondWordCountInfo) -> secondWordCountInfo.getWordCount() - firstWordCountInfo.getWordCount());
+            wordCountInfos.sort((firstWordCountInfo, secondWordCountInfo) -> secondWordCountInfo.getWordCount() - firstWordCountInfo.getWordCount());
 
-                return generateWordCountInfoResult(wordCountInfos);
-            } catch (Exception e) {
-                return CALCULATE_ERROR;
-            }
+            return generateWordCountInfoResult(wordCountInfos);
+        } catch (Exception e) {
+            return CALCULATE_ERROR;
         }
+//        }
     }
 
     private List<WordCountInfo> countWordFrequency(String sentence) {
