@@ -1,11 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringJoiner;
-import java.io.CharArrayWriter;
-
-import java.time.LocalDateTime;
+import java.util.*;
 
 public class WordFrequencyGame {
 
@@ -19,7 +12,7 @@ public class WordFrequencyGame {
     public String getResult(String inputStr) {
 
 
-        if (inputStr.split(SPACE_PATTERN).length== COUNT_INITIAL_VALUE) {
+        if (inputStr.split(SPACE_PATTERN).length == COUNT_INITIAL_VALUE) {
             return inputStr + COUNT_INITIAL_STRING;
         } else {
 
@@ -33,7 +26,7 @@ public class WordFrequencyGame {
                     inputList.add(input);
                 }
 
-                Map<String, List<Input>> map =getListMap(inputList);
+                Map<String, List<Input>> map = getListMap(inputList);
 
                 List<Input> list = new ArrayList<>();
                 for (Map.Entry<String, List<Input>> entry : map.entrySet()) {
@@ -47,7 +40,7 @@ public class WordFrequencyGame {
                 ENTER_STRING = "\n";
                 StringJoiner joiner = new StringJoiner(ENTER_STRING);
                 for (Input w : inputList) {
-                    String s = w.getValue() + SPACE_STRING +w.getWordCount();
+                    String s = w.getValue() + SPACE_STRING + w.getWordCount();
                     joiner.add(s);
                 }
                 return joiner.toString();
@@ -59,14 +52,13 @@ public class WordFrequencyGame {
 
     private Map<String, List<Input>> getListMap(List<Input> inputList) {
         Map<String, List<Input>> map = new HashMap<>();
-        for (Input input : inputList){
+        for (Input input : inputList) {
 
             if (!map.containsKey(input.getValue())) {
                 ArrayList arr = new ArrayList<>();
                 arr.add(input);
                 map.put(input.getValue(), arr);
-            }
-            else {
+            } else {
                 map.get(input.getValue()).add(input);
             }
         }
