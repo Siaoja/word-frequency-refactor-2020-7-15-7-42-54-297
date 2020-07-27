@@ -26,10 +26,10 @@ public class WordFrequencyGame {
                     wordCountInfos.add(wordCountInfo);
                 }
 
-                Map<String, List<WordCountInfo>> map = getListMap(wordCountInfos);
+                Map<String, List<WordCountInfo>> wordCountInfoMap = getListMap(wordCountInfos);
 
                 List<WordCountInfo> list = new ArrayList<>();
-                for (Map.Entry<String, List<WordCountInfo>> entry : map.entrySet()) {
+                for (Map.Entry<String, List<WordCountInfo>> entry : wordCountInfoMap.entrySet()) {
                     WordCountInfo input = new WordCountInfo(entry.getKey(), entry.getValue().size());
                     list.add(input);
                 }
