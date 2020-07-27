@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 public class WordFrequencyGame {
 
     private static final String SPACE_PATTERN = "\\s+";
+    public static final String SPACE_STRING = " ";
 
     public String getResult(String inputStr) {
 
@@ -43,7 +44,7 @@ public class WordFrequencyGame {
 
                 StringJoiner joiner = new StringJoiner("\n");
                 for (Input w : inputList) {
-                    String s = w.getValue() + " " +w.getWordCount();
+                    String s = w.getValue() + SPACE_STRING +w.getWordCount();
                     joiner.add(s);
                 }
                 return joiner.toString();
