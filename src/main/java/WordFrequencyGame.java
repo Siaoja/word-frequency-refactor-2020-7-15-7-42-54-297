@@ -11,11 +11,6 @@ public class WordFrequencyGame {
 
     public String getResult(String sentence) {
 
-
-//        if (sentence.split(SPACE_PATTERN).length == COUNT_INITIAL_VALUE) {
-//            return sentence + COUNT_INITIAL_STRING;
-//        } else {
-
         try {
 
             List<WordCountInfo> wordCountInfos = countWordFrequency(sentence);
@@ -26,7 +21,6 @@ public class WordFrequencyGame {
         } catch (Exception e) {
             return CALCULATE_ERROR;
         }
-//        }
     }
 
     private List<WordCountInfo> countWordFrequency(String sentence) {
