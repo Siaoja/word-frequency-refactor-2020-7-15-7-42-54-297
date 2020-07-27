@@ -9,16 +9,16 @@ public class WordFrequencyGame {
     public static final String CALCULATE_ERROR = "Calculate Error";
     private String ENTER_STRING;
 
-    public String getResult(String inputStr) {
+    public String getResult(String sentence) {
 
 
-        if (inputStr.split(SPACE_PATTERN).length == COUNT_INITIAL_VALUE) {
-            return inputStr + COUNT_INITIAL_STRING;
+        if (sentence.split(SPACE_PATTERN).length == COUNT_INITIAL_VALUE) {
+            return sentence + COUNT_INITIAL_STRING;
         } else {
 
             try {
 
-                String[] arr = inputStr.split(SPACE_PATTERN);
+                String[] arr = sentence.split(SPACE_PATTERN);
 
                 List<Input> inputList = new ArrayList<>();
                 for (String s : arr) {
