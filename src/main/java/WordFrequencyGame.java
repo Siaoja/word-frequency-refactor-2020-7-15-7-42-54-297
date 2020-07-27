@@ -20,17 +20,17 @@ public class WordFrequencyGame {
 
                 String[] words = sentence.split(SPACE_PATTERN);
 
-                List<Input> inputList = new ArrayList<>();
+                List<WordCountInfo> inputList = new ArrayList<>();
                 for (String s : words) {
-                    Input input = new Input(s, COUNT_INITIAL_VALUE);
+                    WordCountInfo input = new WordCountInfo(s, COUNT_INITIAL_VALUE);
                     inputList.add(input);
                 }
 
-                Map<String, List<Input>> map = getListMap(inputList);
+                Map<String, List<WordCountInfo>> map = getListMap(inputList);
 
-                List<Input> list = new ArrayList<>();
-                for (Map.Entry<String, List<Input>> entry : map.entrySet()) {
-                    Input input = new Input(entry.getKey(), entry.getValue().size());
+                List<WordCountInfo> list = new ArrayList<>();
+                for (Map.Entry<String, List<WordCountInfo>> entry : map.entrySet()) {
+                    WordCountInfo input = new WordCountInfo(entry.getKey(), entry.getValue().size());
                     list.add(input);
                 }
                 inputList = list;
@@ -39,7 +39,7 @@ public class WordFrequencyGame {
 
                 ENTER_STRING = "\n";
                 StringJoiner joiner = new StringJoiner(ENTER_STRING);
-                for (Input w : inputList) {
+                for (WordCountInfo w : inputList) {
                     String s = w.getValue() + SPACE_STRING + w.getWordCount();
                     joiner.add(s);
                 }
@@ -50,9 +50,9 @@ public class WordFrequencyGame {
         }
     }
 
-    private Map<String, List<Input>> getListMap(List<Input> inputList) {
-        Map<String, List<Input>> map = new HashMap<>();
-        for (Input input : inputList) {
+    private Map<String, List<WordCountInfo>> getListMap(List<WordCountInfo> inputList) {
+        Map<String, List<WordCountInfo>> map = new HashMap<>();
+        for (WordCountInfo input : inputList) {
 
             if (!map.containsKey(input.getValue())) {
                 ArrayList arr = new ArrayList<>();
