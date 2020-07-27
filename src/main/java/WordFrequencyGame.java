@@ -4,8 +4,6 @@ public class WordFrequencyGame {
 
     private static final String SPACE_PATTERN = "\\s+";
     private static final String SPACE_STRING = " ";
-    private static final int COUNT_INITIAL_VALUE = 1;
-    private static final String COUNT_INITIAL_STRING = " 1";
     private static final String CALCULATE_ERROR = "Calculate Error";
     private static final String ENTER_STRING = "\n";
 
