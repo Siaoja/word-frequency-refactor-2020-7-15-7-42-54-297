@@ -21,9 +21,9 @@ public class WordFrequencyGame {
                 String[] words = sentence.split(SPACE_PATTERN);
 
                 List<WordCountInfo> wordCountInfos = new ArrayList<>();
-                for (String s : words) {
-                    WordCountInfo input = new WordCountInfo(s, COUNT_INITIAL_VALUE);
-                    wordCountInfos.add(input);
+                for (String word : words) {
+                    WordCountInfo wordCountInfo = new WordCountInfo(word, COUNT_INITIAL_VALUE);
+                    wordCountInfos.add(wordCountInfo);
                 }
 
                 Map<String, List<WordCountInfo>> map = getListMap(wordCountInfos);
