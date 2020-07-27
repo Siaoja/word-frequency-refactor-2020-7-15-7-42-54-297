@@ -12,13 +12,14 @@ public class WordFrequencyGame {
     private static final String SPACE_PATTERN = "\\s+";
     public static final String SPACE_STRING = " ";
     public static final int COUNT_INITIAL_VALUE = 1;
+    public static final String COUNT_INITIAL_STRING = " 1";
     private String ENTER_STRING;
 
     public String getResult(String inputStr) {
 
 
         if (inputStr.split(SPACE_PATTERN).length== COUNT_INITIAL_VALUE) {
-            return inputStr + " 1";
+            return inputStr + COUNT_INITIAL_STRING;
         } else {
 
             try {
