@@ -2,9 +2,9 @@ public class WordCountInfo {
     private String value;
     private int count;
 
-    public WordCountInfo(String w, int i) {
-        this.value = w;
-        this.count = i;
+    public WordCountInfo(String word, int wordFequency) {
+        this.value = word;
+        this.count = wordFequency;
     }
 
     public String getValue() {
