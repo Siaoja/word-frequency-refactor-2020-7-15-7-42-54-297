@@ -11,12 +11,13 @@ public class WordFrequencyGame {
 
     private static final String SPACE_PATTERN = "\\s+";
     public static final String SPACE_STRING = " ";
+    public static final int COUNT_INITIAL_VALUE = 1;
     private String ENTER_STRING;
 
     public String getResult(String inputStr) {
 
 
-        if (inputStr.split(SPACE_PATTERN).length==1) {
+        if (inputStr.split(SPACE_PATTERN).length== COUNT_INITIAL_VALUE) {
             return inputStr + " 1";
         } else {
 
@@ -27,7 +28,7 @@ public class WordFrequencyGame {
 
                 List<Input> inputList = new ArrayList<>();
                 for (String s : arr) {
-                    Input input = new Input(s, 1);
+                    Input input = new Input(s, COUNT_INITIAL_VALUE);
                     inputList.add(input);
                 }
 
