@@ -55,7 +55,7 @@ public class WordFrequencyGame {
         for (WordCountInfo input : inputList) {
 
             if (!map.containsKey(input.getWord())) {
-                ArrayList arr = new ArrayList<>();
+                List<WordCountInfo> arr = new ArrayList<>();
                 arr.add(input);
                 map.put(input.getWord(), arr);
             } else {
