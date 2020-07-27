@@ -7,7 +7,7 @@ public class WordFrequencyGame {
     public static final int COUNT_INITIAL_VALUE = 1;
     public static final String COUNT_INITIAL_STRING = " 1";
     public static final String CALCULATE_ERROR = "Calculate Error";
-    private String ENTER_STRING;
+    private static final String ENTER_STRING = "\n";
 
     public String getResult(String sentence) {
 
@@ -37,7 +37,6 @@ public class WordFrequencyGame {
 
                 wordCountInfos.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
 
-                ENTER_STRING = "\n";
                 StringJoiner joiner = new StringJoiner(ENTER_STRING);
                 for (WordCountInfo w : wordCountInfos) {
                     String s = w.getWord() + SPACE_STRING + w.getWordCount();
