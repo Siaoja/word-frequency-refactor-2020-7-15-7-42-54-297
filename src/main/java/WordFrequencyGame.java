@@ -18,22 +18,7 @@ public class WordFrequencyGame {
 
             try {
 
-                String[] words = sentence.split(SPACE_PATTERN);
-
-                List<WordCountInfo> wordCountInfos = new ArrayList<>();
-                for (String word : words) {
-                    WordCountInfo wordCountInfo = new WordCountInfo(word, COUNT_INITIAL_VALUE);
-                    wordCountInfos.add(wordCountInfo);
-                }
-
-                Map<String, List<WordCountInfo>> wordCountInfoMap = getListMap(wordCountInfos);
-
-                List<WordCountInfo> wordCountInfos1 = new ArrayList<>();
-                for (Map.Entry<String, List<WordCountInfo>> entry : wordCountInfoMap.entrySet()) {
-                    WordCountInfo input = new WordCountInfo(entry.getKey(), entry.getValue().size());
-                    wordCountInfos1.add(input);
-                }
-                wordCountInfos = wordCountInfos1;
+                List<WordCountInfo> wordCountInfos = countWordFrequency(sentence);
 
                 wordCountInfos.sort((firstWordCountInfo, secondWordCountInfo) -> secondWordCountInfo.getWordCount() - firstWordCountInfo.getWordCount());
 
@@ -42,6 +27,19 @@ public class WordFrequencyGame {
                 return CALCULATE_ERROR;
             }
         }
+    }
+
+    private List<WordCountInfo> countWordFrequency(String sentence) {
+
+        List<String> words = Arrays.asList(sentence.split(SPACE_PATTERN));
+        List<WordCountInfo> wordCountInfos = new ArrayList<>();
+
+        for (String uniqueWord : new HashSet<>(words)) {
+            int count = (int) words.stream().filter(word -> word.equals(uniqueWord)).count();
+            wordCountInfos.add(new WordCountInfo(uniqueWord, count));
+        }
+
+        return wordCountInfos;
     }
 
     private String generateWordCountInfoResult(List<WordCountInfo> wordCountInfos) {
